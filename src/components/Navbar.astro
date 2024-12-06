@@ -1,0 +1,72 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/logo.png";
+---
+
+<nav class="bg-[#a67777] fixed w-full z-10 barra">
+  <div class="flex items-center justify-between mx-auto p-4">
+    <a class="flex items-center space-x-4 w-40 h-30" href="#">
+      <Image class="logo" src={logo} alt="s" height={1000} width={1000} />
+    </a>
+
+    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+      <ul
+        class="font-medium flex flex-col p-4 md:p-0 mt-4 items-center border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-[#a67777]"
+      >
+        <li>
+          <a
+            href="#porfolio"
+            class="block py-2 px-3 text-black rounded md:hover:bg-transparent md:border-0 md:p-0"
+            >Porfolio
+          </a>
+          <li>
+            <a
+              href="#servicios"
+              class="block py-2 px-3 text-black rounded md:hover:bg-transparent md:border-0 md:p-0"
+              >Servicios</a
+            >
+          </li>
+          <li>
+            <a class="cs-button-solid" href="#contacto">Consultar</a>
+          </li>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // Selecciona la imagen que deseas mostrar
+    const imageElement = document.querySelector(".barra") as HTMLElement; // Asegúrate de usar la misma clase que tu imagen
+
+    // Porcentaje de scroll en el que quieres que la imagen se muestre (ej. 30%)
+    const showAtScrollPercentage = 15;
+
+    // Oculta la imagen inicialmente
+    imageElement.style.opacity = "0";
+    imageElement.style.transition = "opacity 0.3s ease-in-out"; // Configura la transición para suavizar la aparición
+
+    function handleScroll() {
+      // Calcula el porcentaje de scroll
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const fullHeight = document.documentElement.scrollHeight - windowHeight;
+      const scrollPercentage = (scrollPosition / fullHeight) * 100;
+
+      // Verifica si se ha alcanzado el porcentaje definido
+      if (scrollPercentage >= showAtScrollPercentage) {
+        imageElement.style.opacity = "1"; // Muestra la imagen con animación suave
+      } else {
+        imageElement.style.opacity = "0"; // Oculta la imagen si el scroll es menor
+      }
+    }
+
+    // Escucha el evento de scroll en la ventana
+    window.addEventListener("scroll", handleScroll);
+  </script>
+
+  <style>
+    .index {
+      z-index: 1000;
+    }
+  </style>
+</nav>

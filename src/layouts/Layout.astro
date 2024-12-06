@@ -1,0 +1,225 @@
+---
+const { title } = Astro.props;
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+
+    <!--Metatags para compartir link -->
+    <meta name="title" property="og:title" content="Doyle" />
+    <meta
+      name="description"
+      property="og:description"
+      content="Servicios de fotografía y video para tu inmueble"
+    />
+    <meta
+      name="image"
+      property="og:image"
+      content="/images/android-chrome-192x192.png"
+    />
+    <meta property="og:image:type" content="image/webp" />
+    <meta name="theme-color" content="#1d1d1b" />
+    <meta name="generator" content={Astro.generator} />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@1,300&family=Noto+Serif+TC:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Favicon básico -->
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+
+    <!-- PNG favicons -->
+    <link
+      rel="icon"
+      href="/images/favicon-16x16.png"
+      sizes="16x16"
+      type="image/png"
+    />
+    <link
+      rel="icon"
+      href="/images/favicon-32x32.png"
+      sizes="32x32"
+      type="image/png"
+    />
+    <link
+      rel="icon"
+      href="/images/android-chrome-192x192.png"
+      sizes="192x192"
+      type="image/png"
+    />
+    <link
+      rel="icon"
+      href="/images/android-chrome-512x512.png"
+      sizes="512x512"
+      type="image/png"
+    />
+
+    <!-- Apple touch icon -->
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <title>{title}</title>
+  </head>
+  <body>
+    <Navbar />
+    <slot />
+    <Footer />
+  </body>
+  <style is:global>
+    :root {
+      /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
+      --primary: #a67777;
+      --primaryLight: #ffba43;
+      --secondary: #ffba43;
+      --secondaryLight: #ffba43;
+      --headerColor: #1a1a1a;
+      --bodyTextColor: #261818;
+      --bodyTextColorWhite: #261818;
+      /* 13px - 16px */
+      --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+      /* 31px - 49px */
+      --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+      --bodyFontSize: 1rem;
+      /* 60px - 100px top and bottom */
+      --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+    }
+
+    body {
+      margin: auto;
+      padding: 0;
+      font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Oxygen,
+        Ubuntu,
+        Cantarell,
+        "Open Sans",
+        "Helvetica Neue",
+        sans-serif;
+      overflow-x: hidden; /* Evitar el desbordamiento horizontal */
+    }
+
+    .cs-topper {
+      font-size: var(--topperFontSize);
+      line-height: 1.2em;
+      text-transform: uppercase;
+      text-align: inherit;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+
+    .cs-title {
+      font-size: var(--headerFontSize);
+      font-weight: 900;
+      line-height: 1.2em;
+      margin: 0 0 1rem 0;
+      color: var(--headerColor);
+      position: relative;
+    }
+
+    .cs-main-title {
+      paint-order: stroke fill;
+      display: inline-block;
+      -webkit-text-stroke: 10px red;
+      text-shadow:
+        10px 10px 0px black,
+        -10px 10px 0 black,
+        10px -10px 0 black,
+        -10px -10px 0 black;
+    }
+
+    .cs-text {
+      font-size: var(--bodyFontSize);
+      line-height: 1.5em;
+      text-align: inherit;
+      width: 100%;
+      max-width: 40.625rem;
+      margin: 0;
+      color: var(--bodyTextColor);
+    }
+
+    .cs-button-solid {
+      font-size: 1rem;
+      line-height: clamp(2.875em, 5.5vw, 3.5em);
+      text-decoration: none;
+      font-weight: 700;
+      text-align: center;
+      color: #fff;
+      min-width: 9.375rem;
+      padding: 0 1.5rem;
+      background-color: black;
+      border-radius: 0.25rem;
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      box-sizing: border-box;
+    }
+
+    .cs-button-solid:before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 0%;
+      background: #2b2b2b;
+      opacity: 1;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      border-radius: 0.25rem;
+      transition: width 0.3s;
+    }
+    .cs-button-solid:hover:before {
+      width: 100%;
+    }
+
+    @media only screen and (min-width: 0rem) {
+      .cs-container {
+        width: 100%;
+        max-width: 100%; /* Asegúrate de que no se exceda el ancho de la pantalla */
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cs-content {
+        text-align: left;
+        width: 100%;
+        max-width: 100%; /* Asegúrate de que no se exceda el ancho de la pantalla */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+    /* Tablet - 768px */
+    @media only screen and (min-width: 48rem) {
+      .cs-container {
+        max-width: 100%;
+      }
+
+      .cs-content {
+        width: 47%;
+        /* prevents flexbox from squishing it */
+        flex: none;
+      }
+    }
+
+    /* Desktop - 1024px */
+    @media only screen and (min-width: 64rem) {
+    }
+  </style>
+</html>

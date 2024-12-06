@@ -1,0 +1,218 @@
+---
+import heroImage from "../assets/house2-m.jpg";
+import logo from "../assets/logo.png";
+import { Image } from "astro:assets";
+---
+
+<section>
+  <div class="wrap">
+    <div class="overlay">
+      <div class="title">
+        <div class="logo-container">
+          <p>CON</p>
+          <Image
+            class="logos"
+            src={logo}
+            alt="doyle logo"
+            loading="eager"
+            width={287}
+            height={1000}
+          />
+        </div>
+        <p>TU PROPIEDAD</p>
+        <p>SE MUEVE</p>
+      </div>
+      <a class="cs-button-solid mt-5" href="#contacto">Consultar</a>
+    </div>
+    <div class="image-container">
+      <Image
+        class="hero-image"
+        src={heroImage}
+        alt="Hero image"
+        format="webp"
+      />
+    </div>
+  </div>
+  <!--Esto es el hero de cuando esta en formato mobile el tamaño de pantalla -->
+  <div class="mobile title relative">
+    <div class="title">
+      <div class="logo-container">
+        <p>CON</p>
+        <Image class="logos" src={logo} alt="s" height={287} width={1000} />
+      </div>
+      <div class="segunda">
+        <p>TU PROPIEDAD</p>
+        <p>SE MUEVE</p>
+      </div>
+      <a class="cs-button-solid" href="#contacto">Consultar</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .mobile.title {
+    position: relative;
+    background-image: url("/src/assets/house2-m.jpg"); /* Ruta de la imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Ajusta este valor para que sea más pequeño */
+    overflow: hidden; /* Asegura que la imagen no sobresalga */
+  }
+
+  .mobile.title .title {
+    position: relative;
+    z-index: 2; /* Asegura que el contenido esté por encima */
+    padding: 20px;
+  }
+
+  .mobile.title::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to bottom,
+      #a67777 40%,
+      rgba(0, 0, 0, 0)
+    ); /* Gradiente 100% intenso al principio y disipándose hacia abajo */
+    z-index: 1; /* Gradiente sobre la imagen de fondo */
+  }
+
+  .logo-container p,
+  .segunda p,
+  .cs-button-solid {
+    position: relative;
+    z-index: 3; /* Asegura que estos elementos estén por encima del gradiente */
+  }
+
+  .title p {
+    font-family: "Noto Serif TC", serif;
+    font-optical-sizing: auto;
+    font-size: 4rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .wrap {
+    display: grid;
+    & > * {
+      grid-column: 1;
+      grid-row: 1;
+    }
+  }
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .logos {
+    margin-left: 30px;
+    width: 200px;
+    height: auto;
+  }
+
+  .hero-image {
+    width: 100%; /* Cambiado a 100% para evitar desbordamiento */
+    height: 100vh; /* Cambiado a auto para mantener la proporción */
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .image-container {
+    display: flex;
+    justify-content: end;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box; /* Agregado para evitar problemas de tamaño */
+  }
+
+  .overlay {
+    width: 100%; /* Cambiado a 100% para evitar desbordamiento */
+    max-width: 100%; /* Se mantiene un max-width para responsividad */
+    height: 100%;
+    background: linear-gradient(to bottom right, #a67777 50%, rgba(0, 0, 0, 0));
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 50px;
+  }
+
+  h1 {
+    font-size: 48px;
+    margin: 0;
+  }
+
+  button {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .btn-container {
+    margin-top: 20px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .wrap {
+      display: none;
+    }
+    .mobile {
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 20px;
+      background-color: #a67777;
+      height: 70vh;
+      width: auto;
+    }
+
+    .title p {
+      text-align: center;
+      display: inline;
+      font-size: 2.2rem;
+    }
+
+    .segunda p {
+      display: block;
+    }
+
+    .cs-button-solid {
+      margin-top: 50px;
+      padding: 0px 50px;
+      font-size: 1rem;
+    }
+
+    .logos {
+      width: 200px;
+      margin-left: 10px;
+    }
+  }
+
+  @media screen and (max-width: 375px) {
+    .logos {
+      width: 175px;
+      margin-left: 10px;
+    }
+
+    .title p {
+      font-size: 2.2rem;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+  }
+</style>
