@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import "./carousel.css";
 
 const images = [
-  "/src/assets/house2-m.jpg",
-  "/src/assets/house3-m.jpg",
-  "/src/assets/house4-m.jpg",
-  "/src/assets/house5-m.jpg",
-  "/src/assets/house6-m.jpg",
-  "/src/assets/dron.mp4",
+  "/images/casas/house2-m.jpg",
+  "/images/casas/house3-m.jpg",
+  "/images/casas/house4-m.jpg",
+  "/images/casas/house5-m.jpg",
+  "/images/casas/house6-m.jpg",
+  "/images/casas/dron.mp4",
 ];
 
 const Carousel = () => {
@@ -69,7 +69,7 @@ const Carousel = () => {
               <img src={image} alt={`Thumbnail ${index + 1}`} />
             ) : (
               <img
-                src="/src/assets/house2-m.jpg"
+                src="/images/casas/house2-m.jpg"
                 alt={`Thumbnail ${index + 1}`}
               />
             )}

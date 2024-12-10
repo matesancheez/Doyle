@@ -1,5 +1,7 @@
 ---
 import Carousel from "./react/Carousel";
+import DronSVG from "../assets/dron.svg";
+import TourSVG from "../assets/tour.svg";
 ---
 
 <section class="mb-40" id="porfolio">
@@ -11,37 +13,62 @@ import Carousel from "./react/Carousel";
   </div>
 
   <div class="mt-16" id="servicios">
-    <div class="w-[80%] mx-auto flex flex-col justify-between">
+    <div class="w-[80%] mx-auto flex flex-col justify-between mt-10">
       <p class="cs-title text-center lg:text-end p-10">Video con dron</p>
 
       <div class="lg:flex lg:justify-between">
-        <div class="w-[60%] hidden lg:inline">
+        <div class="w-[50%] hidden lg:inline">
           <div class="w-[100%] h-[100%]">
-            <video
-              src="/src/assets/dron.mp4"
-              autoplay
-              muted
-              loop
-              class="w-[100%] h-[100%]"></video>
+            <video autoplay muted>
+              <source src="/images/casas/dron.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
         <div class="w-[30%] h-auto inline lg:grid lg:place-items-center">
-          <div>
-            <img src="/src/assets/dron.png" alt="placeholder" class="" />
+          <div class="contenedor">
+            <div>
+              <img
+                src="/images/assets/dron.svg"
+                alt="porfolio"
+                class="w-[100%] h-[100%] relative z-40"
+              />
+            </div>
+            <div class="circle circle1"></div>
+            <div class="circle circle2"></div>
+            <div class="circle circle3"></div>
           </div>
+          <p class="mt-10 lg:hidden">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi
+            recusandae esse eos suscipit assumenda dicta beatae laudantium nisi,
+            maiores, dolor repudiandae. Molestiae, voluptates optio deserunt
+            officiis maiores ut sed aperiam?
+          </p>
         </div>
       </div>
-
-      <!--Esta quiero que vaya a la derecha del todo abajo -->
     </div>
+
     <div class="w-[80%] mx-auto flex flex-col justify-between mt-10">
       <p class="cs-title text-center lg:text-start p-10">Tour virtual</p>
 
       <div class="lg:flex lg:justify-between">
         <div class="w-[30%] h-auto inline lg:grid lg:place-items-center">
-          <div>
-            <img src="/src/assets/hombre.jpg" alt="placeholder" class="" />
+          <div class="contenedor">
+            <img
+              src="/images/assets/tour.svg"
+              alt="porfolio"
+              class="w-[100%] h-[100%] relative z-40"
+            />
+            <div class="circle circle1"></div>
+            <div class="circle circle2"></div>
+            <div class="circle circle3"></div>
           </div>
+          <p class="mt-10 lg:hidden">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi
+            recusandae esse eos suscipit assumenda dicta beatae laudantium nisi,
+            maiores, dolor repudiandae. Molestiae, voluptates optio deserunt
+            officiis maiores ut sed aperiam?
+          </p>
         </div>
         <div class="w-[50%] hidden lg:inline">
           <div class="w-[100%] h-[100%]">
@@ -62,6 +89,71 @@ import Carousel from "./react/Carousel";
     .text {
       text-align: center;
       padding: 1rem;
+    }
+
+    .floating .dron {
+      width: 200px; /* Ajusta el tamaño según tu necesidad */
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .contenedor {
+      position: relative;
+      display: inline-block;
+    }
+
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      /* Color azul translúcido */
+      animation: float 4s ease-in-out infinite;
+      z-index: 30; /* Los círculos estarán detrás de la imagen */
+    }
+
+    .circle1 {
+      background: #a67777;
+      opacity: 0.3;
+      width: 150px;
+      height: 150px;
+      top: -30px;
+      left: -10px;
+      animation-delay: 0s;
+    }
+
+    .circle3 {
+      border: 2px solid #a67777;
+
+      width: 200px;
+      height: 200px;
+      top: -10px;
+      left: 30px;
+      animation-delay: 0s;
+    }
+
+    .circle2 {
+      background: #a67777;
+      width: 100px;
+      height: 100px;
+      bottom: -10px;
+      right: 0px;
+      animation-delay: 1s;
+    }
+
+    @keyframes float {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @media screen and (max-width: 1024px) {
+      .contenedor {
+        position: relative;
+        display: grid;
+        place-items: center;
+      }
     }
   </style>
 </section>
