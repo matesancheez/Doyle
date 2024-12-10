@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import "./carousel.css";
 
 const images = [
-  "/images/casas/house2-m.jpg",
-  "/images/casas/house3-m.jpg",
-  "/images/casas/house4-m.jpg",
-  "/images/casas/house5-m.jpg",
-  "/images/casas/house6-m.jpg",
+  "/images/casas/house2-m.webp",
+  "/images/casas/house3-m.webp",
+  "/images/casas/house4-m.webp",
+  "/images/casas/house5-m.webp",
+  "/images/casas/house6-m.webp",
   "/images/casas/dron.mp4",
 ];
 
@@ -35,20 +35,30 @@ const Carousel = () => {
   };
 
   function tieneExtension(archivo) {
-    return /\.(png|jpg|jpeg)$/.test(archivo);
+    return /\.(png|jpg|jpeg|webp)$/.test(archivo);
   }
 
   return (
     <div className="carousel">
       {/* Botón para la imagen anterior */}
       <button onClick={goToPrevious} className="carousel-button prev">
-        <img src="/images/assets/arrow-left.svg" alt="Previous" />
+        <img
+          src="/images/assets/arrow-left.svg"
+          alt="Previous"
+          width="40"
+          height="40"
+        />
       </button>
 
       {/* Imagen principal o video */}
       <div className="main-image" onClick={toggleModal}>
         {tieneExtension(images[currentIndex]) ? (
-          <img src={images[currentIndex]} alt={`Slide ${currentIndex + 1}`} />
+          <img
+            src={images[currentIndex]}
+            alt={`Slide ${currentIndex + 1}`}
+            width="100"
+            height="100"
+          />
         ) : (
           <video autoPlay muted>
             <source src={images[currentIndex]} type="video/mp4" />
@@ -59,7 +69,12 @@ const Carousel = () => {
 
       {/* Botón para la siguiente imagen */}
       <button onClick={goToNext} className="carousel-button next">
-        <img src="/images/assets/arrow-right.svg" alt="Next" />
+        <img
+          src="/images/assets/arrow-right.svg"
+          alt="Next"
+          width="40"
+          height="40"
+        />
       </button>
 
       {/* Miniaturas */}
@@ -71,11 +86,18 @@ const Carousel = () => {
             onClick={() => selectImage(index)}
           >
             {tieneExtension(image) ? (
-              <img src={image} alt={`Thumbnail ${index + 1}`} />
+              <img
+                src={image}
+                alt={`Thumbnail ${index + 1}`}
+                width="100"
+                height="100"
+              />
             ) : (
               <img
-                src="/images/casas/house2-m.jpg"
+                src="/images/casas/house2-m.webp"
                 alt={`Thumbnail ${index + 1}`}
+                width="100"
+                height="100"
               />
             )}
           </div>
@@ -90,12 +112,19 @@ const Carousel = () => {
               &times;
             </button>
             <button onClick={goToPrevious} className="modal-button prev">
-              <img src="/images/assets/arrow-left.svg" alt="Previous" />
+              <img
+                src="/images/assets/arrow-left.svg"
+                alt="Previous"
+                width="40"
+                height="40"
+              />
             </button>
             {tieneExtension(images[currentIndex]) ? (
               <img
                 src={images[currentIndex]}
                 alt={`Slide ${currentIndex + 1}`}
+                width="1000"
+                height="1000"
               />
             ) : (
               <video autoPlay muted>
@@ -104,7 +133,12 @@ const Carousel = () => {
               </video>
             )}
             <button onClick={goToNext} className="modal-button next">
-              <img src="/images/assets/arrow-right.svg" alt="Next" />
+              <img
+                src="/images/assets/arrow-right.svg"
+                alt="Next"
+                width="40"
+                height="40"
+              />
             </button>
           </div>
         </div>
