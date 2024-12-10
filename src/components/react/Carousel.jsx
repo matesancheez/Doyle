@@ -12,6 +12,7 @@ const images = [
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const goToPrevious = () => {
     const isFirstSlide = currentIndex === 0;
@@ -29,19 +30,23 @@ const Carousel = () => {
     setCurrentIndex(index);
   };
 
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
   function tieneExtension(archivo) {
     return /\.(png|jpg|jpeg)$/.test(archivo);
   }
 
   return (
-    <div className="carousel hidden">
+    <div className="carousel">
       {/* Botón para la imagen anterior */}
       <button onClick={goToPrevious} className="carousel-button prev">
-        <img src="/src/assets/arrow-left.svg" alt="Previous" />
+        <img src="/images/assets/arrow-left.svg" alt="Previous" />
       </button>
 
       {/* Imagen principal o video */}
-      <div className="main-image">
+      <div className="main-image" onClick={toggleModal}>
         {tieneExtension(images[currentIndex]) ? (
           <img src={images[currentIndex]} alt={`Slide ${currentIndex + 1}`} />
         ) : (
@@ -54,7 +59,7 @@ const Carousel = () => {
 
       {/* Botón para la siguiente imagen */}
       <button onClick={goToNext} className="carousel-button next">
-        <img src="/src/assets/arrow-right.svg" alt="Previous" />
+        <img src="/images/assets/arrow-right.svg" alt="Next" />
       </button>
 
       {/* Miniaturas */}
@@ -76,6 +81,34 @@ const Carousel = () => {
           </div>
         ))}
       </div>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="modal">
+          <div className="modal-content">
+            <button className="close-modal" onClick={toggleModal}>
+              &times;
+            </button>
+            <button onClick={goToPrevious} className="modal-button prev">
+              <img src="/images/assets/arrow-left.svg" alt="Previous" />
+            </button>
+            {tieneExtension(images[currentIndex]) ? (
+              <img
+                src={images[currentIndex]}
+                alt={`Slide ${currentIndex + 1}`}
+              />
+            ) : (
+              <video autoPlay muted>
+                <source src={images[currentIndex]} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            )}
+            <button onClick={goToNext} className="modal-button next">
+              <img src="/images/assets/arrow-right.svg" alt="Next" />
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

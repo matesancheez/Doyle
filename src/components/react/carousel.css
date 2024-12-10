@@ -107,6 +107,14 @@
     top: 50%;
     right: 40px;
   }
+
+  .modal {
+    display: none !important; /* Esconde el modal en pantallas pequeñas */
+  }
+
+  .main-image {
+    pointer-events: auto; /* Asegura que la imagen principal pueda ser clickeada normalmente */
+  }
 }
 
 @media (max-width: 480px) {
@@ -144,4 +152,62 @@
   .carousel-button.next {
     right: -130px;
   }
+}
+
+/* Estilos para el modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 70%; /* Ajusta este valor para reducir el tamaño */
+  max-height: 70%; /* Ajusta este valor para reducir el tamaño */
+  overflow: hidden;
+}
+
+.modal img,
+.modal video {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Esto asegura que la imagen o video se ajuste dentro del espacio */
+}
+
+.close-modal {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  font-size: 30px;
+  color: black;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: black;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.modal-button.prev {
+  left: 10px;
+}
+
+.modal-button.next {
+  right: 10px;
 }
