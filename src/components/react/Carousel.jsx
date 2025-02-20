@@ -2,12 +2,24 @@ import React, { useState } from "react";
 import "./carousel.css";
 
 const images = [
-  "/images/casas/house2-m.webp",
-  "/images/casas/house3-m.webp",
-  "/images/casas/house4-m.webp",
-  "/images/casas/house5-m.webp",
-  "/images/casas/house6-m.webp",
-  "/images/casas/dron.mp4",
+  "/images/casas/01.webp",
+  "/images/casas/02.webp",
+  "/images/casas/03.webp",
+  "/images/casas/04.webp",
+  "/images/casas/05.webp",
+  "/images/casas/06.webp",
+  "/images/casas/07.webp",
+  "/images/casas/08.webp",
+  "/images/casas/09.webp",
+  "/images/casas/10.webp",
+  "/images/casas/11.webp",
+  "/images/casas/12.webp",
+  "/images/casas/13.webp",
+  "/images/casas/15.webp",
+  "/images/casas/16.webp",
+  "/images/casas/17.webp",
+  "/images/casas/18.webp",
+  "/images/casas/dron2.mp4",
 ];
 
 const Carousel = () => {
@@ -94,7 +106,7 @@ const Carousel = () => {
               />
             ) : (
               <img
-                src="/images/casas/house2-m.webp"
+                src="/images/casas/dron.webp"
                 alt={`Thumbnail ${index + 1}`}
                 width="100"
                 height="100"

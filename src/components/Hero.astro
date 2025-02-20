@@ -1,6 +1,6 @@
 ---
-import heroImage from "/public/images/casas/house2-m.webp";
-import logo from "../assets/logo.png";
+import heroImage from "/public/images/casas/fondo.webp";
+import logo from "../assets/logo.webp";
 import { Image } from "astro:assets";
 ---
 
@@ -13,7 +13,7 @@ import { Image } from "astro:assets";
           <Image
             class="logos"
             src={logo}
-            alt="doyle logo"
+            alt="logo doyle"
             loading="eager"
             width={287}
             height={1000}
@@ -38,7 +38,14 @@ import { Image } from "astro:assets";
     <div class="title">
       <div class="logo-container">
         <p>CON</p>
-        <Image class="logos" src={logo} alt="s" height={287} width={1000} />
+        <Image
+          class="logos"
+          src={logo}
+          alt="logo doyle"
+          height={143}
+          width={500}
+          loading="eager"
+        />
       </div>
       <div class="segunda">
         <p>TU PROPIEDAD</p>
@@ -52,7 +59,7 @@ import { Image } from "astro:assets";
 <style>
   .mobile.title {
     position: relative;
-    background-image: url("/public/images/casas/house6-m.webp"); /* Ruta de la imagen de fondo */
+    background-image: url("/images/casas/08.webp"); /* Ruta de la imagen de fondo */
     background-size: cover;
     background-position: center;
     height: 100vh; /* Ajusta este valor para que sea más pequeño */
