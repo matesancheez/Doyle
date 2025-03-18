@@ -1,26 +1,54 @@
 ---
 import Carousel from "./react/Carousel";
-import DronSVG from "../assets/dron.svg";
-import TourSVG from "../assets/tour.svg";
 ---
 
 <section class="mb-40" id="porfolio">
   <div class="cs-container">
-    <p class="cs-title text">Nuestros MEJORES trabajos</p>
+    <p class="cs-title text">Así podría verse tu propiedad</p>
     <div class="cs-content">
       <div class="w-[85%] mx-auto">
-        <p class="my-10">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi
-          recusandae esse eos suscipit assumenda dicta beatae laudantium nisi,
-          maiores, dolor repudiandae. Molestiae, voluptates optio deserunt
-          officiis maiores ut sed aperiam?
-        </p>
+        <h1 class="cs-subtitle text">Fotografía Detallada</h1>
       </div>
       <Carousel client:load />
     </div>
   </div>
 
   <div class="mt-16" id="servicios">
+    <div class="w-[80%] mx-auto flex flex-col justify-between mt-10">
+      <p class="cs-title text-center lg:text-start p-10">Video en 4K</p>
+
+      <div class="lg:flex lg:justify-between">
+        <div class="w-[50%] h-auto inline lg:grid lg:place-items-center">
+          <div class="contenedor">
+            <img
+              src="/images/assets/video.svg"
+              alt="porfolio"
+              class="w-[100%] h-[100%] relative z-40"
+              width="100"
+              height="100"
+            />
+            <div class="circle circle1"></div>
+            <div class="circle circle2"></div>
+            <div class="circle circle3"></div>
+          </div>
+          <p class="hidden mt-10">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi
+            recusandae esse eos suscipit assumenda dicta beatae laudantium nisi,
+            maiores, dolor repudiandae. Molestiae, voluptates optio deserunt
+            officiis maiores ut sed aperiam?
+          </p>
+        </div>
+        <div class="w-[50%] hidden lg:inline">
+          <div class="w-[100%] h-[100%]">
+            <video autoplay muted loop>
+              <source src="/images/casas/dron2.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="w-[80%] mx-auto flex flex-col justify-between mt-10">
       <p class="cs-title text-center lg:text-end p-10">Video con dron</p>
 
@@ -48,7 +76,7 @@ import TourSVG from "../assets/tour.svg";
             <div class="circle circle2"></div>
             <div class="circle circle3"></div>
           </div>
-          <p class="mt-10">
+          <p class="hidden mt-10">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi
             recusandae esse eos suscipit assumenda dicta beatae laudantium nisi,
             maiores, dolor repudiandae. Molestiae, voluptates optio deserunt
@@ -59,7 +87,7 @@ import TourSVG from "../assets/tour.svg";
     </div>
 
     <div class="w-[80%] mx-auto flex flex-col justify-between mt-10">
-      <p class="cs-title text-center lg:text-start p-10">Tour virtual</p>
+      <p class="cs-title text-center lg:text-start p-10">Tour virtual 360</p>
 
       <div class="lg:flex lg:justify-between">
         <div class="w-[50%] h-auto inline lg:grid lg:place-items-center">
@@ -75,7 +103,7 @@ import TourSVG from "../assets/tour.svg";
             <div class="circle circle2"></div>
             <div class="circle circle3"></div>
           </div>
-          <p class="mt-10">
+          <p class="hidden mt-10">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi
             recusandae esse eos suscipit assumenda dicta beatae laudantium nisi,
             maiores, dolor repudiandae. Molestiae, voluptates optio deserunt

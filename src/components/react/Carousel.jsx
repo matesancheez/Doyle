@@ -19,7 +19,6 @@ const images = [
   "/images/casas/16.webp",
   "/images/casas/17.webp",
   "/images/casas/18.webp",
-  "/images/casas/dron2.mp4",
 ];
 
 const Carousel = () => {
