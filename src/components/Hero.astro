@@ -1,5 +1,5 @@
 ---
-import heroImage from "/public/images/casas/fondo.webp";
+import heroImage from "/public/images/casas/08.webp";
 import logo from "../assets/logo.webp";
 import { Image } from "astro:assets";
 ---
@@ -22,7 +22,9 @@ import { Image } from "astro:assets";
         <p>TU PROPIEDAD</p>
         <p>SE MUEVE</p>
       </div>
-      <a class="cs-button-solid mt-5" href="#contacto">Consultar</a>
+      <a class="cs-button-solid mt-5 cursor-pointer" id="contact-btn3"
+        >Consultar</a
+      >
     </div>
     <div class="image-container">
       <Image
@@ -51,10 +53,28 @@ import { Image } from "astro:assets";
         <p>TU PROPIEDAD</p>
         <p>SE MUEVE</p>
       </div>
-      <a class="cs-button-solid" href="#contacto">Consultar</a>
+      <a class="cs-button-solid" id="contact-btn4">Consultar</a>
     </div>
   </div>
 </section>
+
+<script>
+  document
+    .getElementById("contact-btn3")
+    .addEventListener("click", function () {
+      document
+        .getElementById("contacto")
+        .scrollIntoView({ behavior: "smooth" });
+    });
+
+  document
+    .getElementById("contact-btn4")
+    .addEventListener("click", function () {
+      document
+        .getElementById("contacto")
+        .scrollIntoView({ behavior: "smooth" });
+    });
+</script>
 
 <style>
   .mobile.title {

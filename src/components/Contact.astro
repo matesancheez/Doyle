@@ -75,7 +75,7 @@
               <p class="mb-1 text-xl font-bold text-dark">Nuestro telefono</p>
               <a
                 class="text-base text-body-color"
-                href="https://wa.me/whatsappphonenumber/?text=urlencodedtext"
+                href="https://wa.me/+5493875891555/?text=urlencodedtext"
                 >Click a nuestro WhatsApp</a
               >
             </div>
@@ -100,7 +100,28 @@
               <p class="mb-1 text-xl font-bold text-dark">
                 Direccion de correo
               </p>
-              <p class="text-base text-body-color">info@yourdomain.com</p>
+              <ul>
+                <li>
+                  <a
+                    class="underline text-[#a67777]"
+                    href="mailto:nicodousset7@gmail.com"
+                    >nicodousset7@gmail.com</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="underline text-[#a67777]"
+                    href="mailto:gonzalezjulianbautista@gmail.com"
+                    >gonzalezjulianbautista@gmail.com</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="underline text-[#a67777]"
+                    href="mailto:maxi.srur96@gmail.com">maxi.srur96@gmail.com</a
+                  >
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -117,8 +138,11 @@
               name="access_key"
               value="a9d30011-f15c-4ddf-8a5f-6f6aaa3b2192"
             />
-
+            <p class="text-center text-2xl font-bold mb-10">
+              Formulario de contacto
+            </p>
             <div class="mb-6">
+              <label>Nombre</label>
               <input
                 required
                 type="text"
@@ -129,64 +153,76 @@
               />
             </div>
             <div class="mb-6">
+              <label>Tipo de propiedad</label>
               <input
                 required
                 type="text"
                 name="tipo"
                 id="tipo"
-                placeholder="Que tipo de propiedad tenes"
+                placeholder="departamento, casa, ..."
                 class="border-stroke text-body-color focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none"
               />
             </div>
             <div class="mb-6">
+              <label>Metros cuadrados</label>
               <input
                 required
                 type="number"
                 name="metros"
                 id="metros"
-                placeholder="Cuantos metros cuadrados tiene"
+                placeholder="30, 40, ..."
                 class="border-stroke text-body-color focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none"
               />
             </div>
             <div class="mb-6">
+              <label>En que barrio esta ubicada</label>
               <input
                 required
                 type="text"
                 name="barrio"
                 id="barrio"
-                placeholder="En que barrio se encuentra"
+                placeholder="Palermo, san isidro, ..."
                 class="border-stroke text-body-color focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none"
               />
             </div>
             <div class="mb-6">
+              <label>Email</label>
               <input
                 required
                 type="email"
                 name="email"
                 id="email"
-                placeholder="Dejanos tu Email"
+                placeholder="pedro@mail.com"
                 class="border-stroke text-body-color focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none"
               />
             </div>
             <div class="mb-6">
+              <label>Telefono</label>
               <input
                 required
                 type="number"
                 name="telefono"
                 id="telefono"
-                placeholder="Y tambien tu celular"
+                placeholder="0115891524"
                 class="border-stroke text-body-color focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none"
               />
             </div>
             <div class="mb-6">
-              <textarea
-                required
-                name="mensaje"
-                id="mensaje"
-                rows="6"
-                placeholder="Contanos que servicos te interesan..."
-                class="border-stroke text-body-color focus:border-primary w-full resize-none rounded border py-3 px-[14px] text-base outline-none"
-              ></textarea>
+              <select
+                name="servicio"
+                id="servicio"
+                class="border-stroke text-body-color focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none"
+              >
+                <option value="">Selecciona una opcion</option>
+                <option value="Fotografia 4K">Fotografia 4K</option>
+                <option value="Video resumen 8K de la propiedad"
+                  >Video resumen 8K de la propiedad</option
+                >
+                <option value="Video con Dron">Video con Dron</option>
+                <option value="Paquete Personalizado"
+                  >Paquete Personalizado</option
+                >
+              </select>
             </div>
             <div>
               <button

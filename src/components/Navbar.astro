@@ -27,18 +27,35 @@ import logo from "../assets/logo.png";
             >
           </li>
           <li>
-            <a class="cs-button-solid" href="#contacto">Consultar</a>
+            <a class="cs-button-solid cursor-pointer" id="contact-btn"
+              >Consultar</a
+            >
           </li>
         </li>
       </ul>
     </div>
 
     <div class="inline md:hidden">
-      <a class="cs-button-solid" href="#contacto">Consultar</a>
+      <a class="cs-button-solid cursor-pointer" id="contact-btn2">Consultar</a>
     </div>
   </div>
 
   <script>
+    document
+      .getElementById("contact-btn")
+      .addEventListener("click", function () {
+        document
+          .getElementById("contacto")
+          .scrollIntoView({ behavior: "smooth" });
+      });
+
+    document
+      .getElementById("contact-btn2")
+      .addEventListener("click", function () {
+        document
+          .getElementById("contacto")
+          .scrollIntoView({ behavior: "smooth" });
+      });
     // Selecciona la imagen que deseas mostrar
     const imageElement = document.querySelector(".barra") as HTMLElement; // Asegúrate de usar la misma clase que tu imagen
 
